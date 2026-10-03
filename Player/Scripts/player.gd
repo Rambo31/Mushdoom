@@ -16,10 +16,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	
 	inputed_dir.x = Input.get_action_strength("right") - Input.get_action_strength("left")
 	inputed_dir.y = Input.get_action_strength("down") - Input.get_action_strength("up")
-	
+	inputed_dir = inputed_dir.normalized()
 	pass
 
 func _physics_process(delta: float) -> void:
